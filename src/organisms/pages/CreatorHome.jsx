@@ -41,11 +41,6 @@ class CreatorHome extends Component {
                   ? <GoogleLogout
                     clientId="772369058063-665vio82g46oqmvijs344qtf1u5aiec5.apps.googleusercontent.com"
                     buttonText="Logout"
-                    onLogoutSuccess={() => {
-                        this.props.signOut();
-                        getStore().dispatch(push(ROUTE_ROOT));
-                      }
-                    }
                   >
                   </GoogleLogout>
                   : null
