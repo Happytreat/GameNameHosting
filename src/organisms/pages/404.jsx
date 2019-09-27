@@ -18,7 +18,7 @@ export default () =>
     <div style={main}>
       <AppBar position="static" style={{ background: 'transparent', boxShadow: 'none'}}>
         <Toolbar>
-          <IconButton edge="start" style={{color: "#000"}} aria-label="back" href={"/homepage"}>
+          <IconButton edge="start" style={{color: "#000"}} aria-label="back" href={"/GameNameHosting/homepage"}>
             <ArrowBackIosIcon />
             <Typography variant="body1">{'Return to Home'}</Typography>
           </IconButton>

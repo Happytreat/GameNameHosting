@@ -119,18 +119,16 @@ class EnterPlayersForm extends Component {
     )
   }
 
-
-  // TODO: Remove <IconButton edge="end" aria-label="signout" href={"/"} onClick={() => this.props.signOut()}> in prod
   render() {
     return (
       <>
         <div style={styles.main}>
           <AppBar position="static" style={{ background: 'transparent', boxShadow: 'none'}}>
             <Toolbar>
-              <IconButton edge="start" style={{color: "#000"}} aria-label="back" href={ROUTE_ROOT}>
+              <IconButton edge="start" style={{color: "#000"}} aria-label="back" href='/GameNameHosting/'>
                 <ArrowBackIosIcon />
               </IconButton>
-              <IconButton edge="end" aria-label="signout" href={ROUTE_ROOT}>
+              <IconButton edge="end" aria-label="signout" href='/GameNameHosting/'>
               {
                 this.props.isAuth
                 ? <GoogleLogout

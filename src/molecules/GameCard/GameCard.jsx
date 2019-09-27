@@ -32,7 +32,7 @@ class GameCard extends Component {
     const { title, questions } = set;
     return (
       <div style={styles.main}>
-        <Button style={styles.button} href={ROUTE_ADD_PLAYERS} onClick={() => selectGame(set)}>
+        <Button style={styles.button} onClick={() => selectGame(set)}>
           {title}
           <br />
           {`With ${questions.length} Questions`}

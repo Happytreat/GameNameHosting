@@ -48,7 +48,7 @@ class CreateQuestionsForm extends Component {
         <div style={styles.main}>
           <AppBar position="static" style={{ background: 'transparent', boxShadow: 'none'}}>
             <Toolbar>
-              <IconButton edge="start" style={{color: "#000"}} aria-label="back" href={ROUTE_CREATOR_HOME}>
+              <IconButton edge="start" style={{color: "#000"}} aria-label="back" href={`/GameNameHosting${ROUTE_CREATOR_HOME}`}>
                 <ArrowBackIosIcon />
               </IconButton>
             </Toolbar>

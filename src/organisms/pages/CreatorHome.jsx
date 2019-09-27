@@ -35,10 +35,10 @@ class CreatorHome extends Component {
       <div style={styles.main}>
         <AppBar position="static" style={{ background: 'transparent', boxShadow: 'none'}}>
           <Toolbar>
-            <IconButton edge="start" style={{color: "#000"}} aria-label="back" href={ROUTE_ROOT}>
+            <IconButton edge="start" style={{color: "#000"}} aria-label="back" href={'/GameNameHosting/'}>
               <ArrowBackIosIcon />
             </IconButton>
-            <IconButton edge="end" aria-label="signout" href={ROUTE_ROOT} onClick={() => this.props.signOut()}>
+            <IconButton edge="end" aria-label="signout" href='/GameNameHosting/' onClick={() => this.props.signOut()}>
               {
                 this.props.isAuth
                   ? <GoogleLogout
@@ -84,6 +84,7 @@ function mapDispatchToProps(dispatch) {
   return {
     signOut: async () => {
       dispatch(userActions.signout());
+      getStore().dispatch(push(ROUTE_ROOT));
     }
   };
 }
