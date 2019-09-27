@@ -31,11 +31,21 @@ const responseGoogle = (response) => {
   console.log(response);
 };
 
+const onSignIn = (googleUser) => {
+  responseGoogle(googleUser);
+  console.log("Successful!" + googleUser.tokenId);
+  // Store User Id
+  this.props.signIn(googleUser);
+  // Redirect to Creator's Home Page to select/create game
+  getStore().dispatch(push(ROUTE_CREATOR_HOME));
+};
+
 class HomePage extends Component {
   render() {
     return (
       <div style={styles.main}>
         <img src={Title} alt="HomePage" style={{ maxWidth: '45vh', marginBottom: '7.5vh' }} />
+        <div className="g-signin2" style={{margin: '0 0 0 50vh'}} dataOnsuccess={() => onSignIn()}></div>
         <GoogleLogin
           clientId="772369058063-665vio82g46oqmvijs344qtf1u5aiec5.apps.googleusercontent.com"
           render={renderProps => (
@@ -43,14 +53,14 @@ class HomePage extends Component {
                             loading={false}
                             onClick={() => {
                               renderProps.onClick();
-                              // TODO: Remove in prod. For dev
-                              getStore().dispatch(push(ROUTE_CREATOR_HOME));
-                              this.props.signIn({
-                                tokenId: "123445-token",
-                                profileObj: {
-                                  givenName: 'Melodies'
-                                }
-                              });
+                              // // TODO: Remove in prod. For dev
+                              // getStore().dispatch(push(ROUTE_CREATOR_HOME));
+                              // this.props.signIn({
+                              //   tokenId: "123445-token",
+                              //   profileObj: {
+                              //     givenName: 'Melodies'
+                              //   }
+                              // });
                             }}
                             disabled={renderProps.disabled}>
               Play
@@ -66,7 +76,6 @@ class HomePage extends Component {
             getStore().dispatch(push(ROUTE_CREATOR_HOME));
           }}
           onFailure={responseGoogle}
-          cookiePolicy={'single_host_origin'}
         />
       </div>
     );
