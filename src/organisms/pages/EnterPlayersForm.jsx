@@ -128,20 +128,6 @@ class EnterPlayersForm extends Component {
               <IconButton edge="start" style={{color: "#000"}} aria-label="back" onClick={() => getStore().dispatch(push(ROUTE_ROOT))}>
                 <ArrowBackIosIcon />
               </IconButton>
-              <IconButton edge="end" aria-label="signout" onClick={() => {
-                this.props.signOut();
-              }}>
-              {
-                this.props.isAuth
-                ? <GoogleLogout
-                    clientId="772369058063-665vio82g46oqmvijs344qtf1u5aiec5.apps.googleusercontent.com"
-                    buttonText="Logout"
-                    //onLogoutSuccess={}
-                  >
-                  </GoogleLogout>
-                : null
-              }
-              </IconButton>
             </Toolbar>
           </AppBar>
           <div style={styles.form}>
