@@ -45,7 +45,6 @@ class HomePage extends Component {
     return (
       <div style={styles.main}>
         <img src={Title} alt="HomePage" style={{ maxWidth: '45vh', marginBottom: '7.5vh' }} />
-        <div className="g-signin2" style={{margin: '0 0 0 50vh'}} dataOnsuccess={() => onSignIn()}></div>
         <GoogleLogin
           clientId="772369058063-665vio82g46oqmvijs344qtf1u5aiec5.apps.googleusercontent.com"
           render={renderProps => (
