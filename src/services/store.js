@@ -18,7 +18,7 @@ const persistConfig = {
 
 // https://medium.com/@Dragonza/react-router-problem-with-gh-pages-c93a5e243819
 export const history = createBrowserHistory({
-  basename: 'https://happytreat.github.io/GameNameHosting/',
+  basename: process.env.PUBLIC_URL,
 });
 export const sagaMiddleware = createSagaMiddleware();
 
