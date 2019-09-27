@@ -67,8 +67,8 @@ class HomePage extends Component {
           )}
           buttonText="Login"
           onSuccess={(res) => {
-            responseGoogle(res);
-            console.log("Successful!" + res.tokenId);
+            // responseGoogle(res);
+            // console.log("Successful!" + res.tokenId);
             // Store User Id
             this.props.signIn(res);
             // Redirect to Creator's Home Page to select/create game
