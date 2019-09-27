@@ -17,7 +17,7 @@ import Background from '../../asset/Background.png';
 import ProgressButton from '../../molecules/ProgressButton/ProgressButton';
 import {actions as userActions, selectors as user} from "../../store/user/user.ducks";
 import { connect } from "react-redux";
-import {ROUTE_GAME_ROOM} from "../../consts/routes";
+import {ROUTE_GAME_ROOM, ROUTE_ROOT} from "../../consts/routes";
 
 const styles = {
   main: {
@@ -127,10 +127,10 @@ class EnterPlayersForm extends Component {
         <div style={styles.main}>
           <AppBar position="static" style={{ background: 'transparent', boxShadow: 'none'}}>
             <Toolbar>
-              <IconButton edge="start" style={{color: "#000"}} aria-label="back" href={"/"}>
+              <IconButton edge="start" style={{color: "#000"}} aria-label="back" href={ROUTE_ROOT}>
                 <ArrowBackIosIcon />
               </IconButton>
-              <IconButton edge="end" aria-label="signout" href={"/"}>
+              <IconButton edge="end" aria-label="signout" href={ROUTE_ROOT}>
               {
                 this.props.isAuth
                 ? <GoogleLogout
