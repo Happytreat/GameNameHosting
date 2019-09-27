@@ -3,6 +3,9 @@ import NotFoundImg from '../../asset/404.svg';
 import Background from '../../asset/Background.png';
 import {AppBar, IconButton, Toolbar, Typography} from "@material-ui/core";
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
+import {getStore} from "../../services/store";
+import {push} from "connected-react-router";
+import {ROUTE_CREATOR_HOME, ROUTE_ROOT} from "../../consts/routes";
 
 const main = {
   textAlign: 'center',
@@ -18,7 +21,7 @@ export default () =>
     <div style={main}>
       <AppBar position="static" style={{ background: 'transparent', boxShadow: 'none'}}>
         <Toolbar>
-          <IconButton edge="start" style={{color: "#000"}} aria-label="back" href={"/GameNameHosting/homepage"}>
+          <IconButton edge="start" style={{color: "#000"}} aria-label="back" onClick={() => getStore().dispatch(push(ROUTE_CREATOR_HOME))}>
             <ArrowBackIosIcon />
             <Typography variant="body1">{'Return to Home'}</Typography>
           </IconButton>

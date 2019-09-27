@@ -42,7 +42,7 @@ class CreateSuccess extends Component {
                         onClick={() => {
                           getStore().dispatch(push(ROUTE_ADD_PLAYERS));
                         }}>
-          Create Game
+          Add friends
         </ProgressButton>
         <ProgressButton variant="contained"
                         loading={false}
