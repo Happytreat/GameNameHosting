@@ -31,12 +31,12 @@ import {
 
 const Router = ({ isAuth, location }) => (
   <Switch>
-    <UnauthenticatedRoute path={ROUTE_ROOT} exact component={HomePage} isAuth={isAuth} title={"Home"} />
-    <UnauthenticatedRoute path={ROUTE_CREATE_SUCCESS} exact component={CreateSuccess} isAuth={false} title={"Success"} />
-    <UnauthenticatedRoute path={ROUTE_CREATOR_HOME} exact component={CreatorHome} isAuth={false} title={"Select Game"} />
-    <AuthenticatedRoute path={ROUTE_CREATE_QUESTIONS} exact component={CreateQuestions} isAuth={isAuth} title={"Create Game"} />
-    <UnauthenticatedRoute path={ROUTE_ADD_PLAYERS} exact component={AddPlayersForm} isAuth={false} title={"Add Players"} />
-    <UnauthenticatedRoute path={ROUTE_GAME_ROOM} exact component={GameRoom} isAuth={false} title={"Play"} />
+    <UnauthenticatedRoute path={`/GameNameHosting${ROUTE_ROOT}`} exact component={HomePage} isAuth={isAuth} title={"Home"} />
+    <UnauthenticatedRoute path={`/GameNameHosting${ROUTE_CREATE_SUCCESS}`} exact component={CreateSuccess} isAuth={false} title={"Success"} />
+    <UnauthenticatedRoute path={`/GameNameHosting${ROUTE_CREATOR_HOME}`} exact component={CreatorHome} isAuth={false} title={"Select Game"} />
+    <AuthenticatedRoute path={`/GameNameHosting${ROUTE_CREATE_QUESTIONS}`} exact component={CreateQuestions} isAuth={isAuth} title={"Create Game"} />
+    <UnauthenticatedRoute path={`/GameNameHosting${ROUTE_ADD_PLAYERS}`} exact component={AddPlayersForm} isAuth={false} title={"Add Players"} />
+    <UnauthenticatedRoute path={`/GameNameHosting${ROUTE_GAME_ROOM}`} exact component={GameRoom} isAuth={false} title={"Play"} />
     <UnauthenticatedRoute component={NotFoundPage} isAuth={false} title={"Page Not Found"} />
   </Switch>
 );
