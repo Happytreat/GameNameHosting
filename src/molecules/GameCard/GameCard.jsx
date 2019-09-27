@@ -32,11 +32,11 @@ class GameCard extends Component {
     const { title, questions } = set;
     return (
       <div style={styles.main}>
-        <Button style={styles.button} onClick={() => selectGame(set)}>
+        <ProgressButton loading={false} variant="contained" style={styles.button} onClick={() => selectGame(set)}>
           {title}
           <br />
           {`With ${questions.length} Questions`}
-        </Button>
+        </ProgressButton>
       </div>
     );
   }
