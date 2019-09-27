@@ -130,14 +130,13 @@ class EnterPlayersForm extends Component {
               </IconButton>
               <IconButton edge="end" aria-label="signout" onClick={() => {
                 this.props.signOut();
-                getStore().dispatch(push(ROUTE_ROOT));
               }}>
               {
                 this.props.isAuth
                 ? <GoogleLogout
                     clientId="772369058063-665vio82g46oqmvijs344qtf1u5aiec5.apps.googleusercontent.com"
                     buttonText="Logout"
-                    onLogoutSuccess={() => this.props.signOut()}
+                    //onLogoutSuccess={}
                   >
                   </GoogleLogout>
                 : null
@@ -198,6 +197,7 @@ function mapDispatchToProps(dispatch) {
     },
     signOut: async () => {
       dispatch(userActions.signout());
+      getStore().dispatch(push(ROUTE_ROOT));
     }
   };
 }

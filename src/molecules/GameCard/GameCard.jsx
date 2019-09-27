@@ -5,7 +5,7 @@ import {ROUTE_ADD_PLAYERS} from '../../consts/routes';
 import { connect } from "react-redux";
 import { actions as userActions } from '../../store/user/user.ducks';
 
-import { Button } from "@material-ui/core";
+import ProgressButton from '../ProgressButton/ProgressButton';
 
 const styles = {
   main: {
