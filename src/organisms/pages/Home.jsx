@@ -43,14 +43,14 @@ class HomePage extends Component {
                             loading={false}
                             onClick={() => {
                               renderProps.onClick();
-                              // // TODO: Remove in prod. For dev
-                              // getStore().dispatch(push(ROUTE_CREATOR_HOME));
-                              // this.props.signIn({
-                              //   tokenId: "123445-token",
-                              //   profileObj: {
-                              //     givenName: 'Melodies'
-                              //   }
-                              // });
+                              // TODO: Remove in prod. For dev
+                              getStore().dispatch(push(ROUTE_CREATOR_HOME));
+                              this.props.signIn({
+                                tokenId: "123445-token",
+                                profileObj: {
+                                  givenName: 'Melodies'
+                                }
+                              });
                             }}
                             disabled={renderProps.disabled}>
               Play
