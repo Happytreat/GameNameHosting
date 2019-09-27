@@ -2,7 +2,7 @@ import createSagaMiddleware from 'redux-saga';
 import storage from 'redux-persist/lib/storage';
 import { composeWithDevTools } from 'redux-devtools-extension/developmentOnly';
 import { createBrowserHistory } from 'history';
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware, createHistory } from 'redux';
 import { persistStore, persistReducer } from 'redux-persist';
 import { routerMiddleware } from 'connected-react-router';
 
@@ -17,7 +17,10 @@ const persistConfig = {
   // blacklist: ['user'] // will not be persisted
 };
 
-export const history = createBrowserHistory();
+// https://medium.com/@Dragonza/react-router-problem-with-gh-pages-c93a5e243819
+export const history = createBrowserHistory({
+  basename: 'https://happytreat.github.io/GameNameHosting',
+});
 export const sagaMiddleware = createSagaMiddleware();
 
 const routeReducer = persistReducer(persistConfig, createRootReducer(history));
